@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://dycvdub30sxlj"]
+
+[sub_resource type="GDScript" id="GDScript_jrokq"]
+script/source = "extends Node2D
+
+const HIT = preload(\"res://Sounds/hit.wav\")
+const JUMP = preload(\"res://Sounds/jump.wav\")
+
+@onready var audioPlayers = $AudioPlayers
+
+func play_sound(sound):
+	for audioStreamPlayer in audioPlayers.get_children():
+		if not audioStreamPlayer.playing:
+			audioStreamPlayer.stream = sound
+			audioStreamPlayer.play()
+			break
+"
+
+[node name="SoundPlayer" type="Node2D"]
+script = SubResource("GDScript_jrokq")
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioPlayers"]
+volume_db = -23.513
+bus = &"Sound"
